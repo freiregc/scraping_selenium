@@ -22,14 +22,14 @@ pesquisa = input('Digite o que deseja buscar no Goole Imagens: ')
 # Instância o Chrome webdriver para a execução do scraping de imagens
 chrome_options = Options()
 
-# Desabilita a extensão de automação do Chrome, evitando a detecção da automação
+# Desabilita a extensão de automação do Chrome
 chrome_options.add_experimental_option("useAutomationExtension", False)
 
-# Exclui o parâmetro "enable-automation" da linha de comando do Chrome para evitar sinais de automação
+# Exclui o parâmetro "enable-automation" da linha de comando do Chrome
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
 # Permite que o navegador continue aberto após o término do script
-chrome_options.add_experimental_option("detach", True)
+# chrome_options.add_experimental_option("detach", True)
 
 # Cria uma instância do WebDriver do Chrome, com as opções definidas acima
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
